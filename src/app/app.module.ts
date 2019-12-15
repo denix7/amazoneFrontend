@@ -13,6 +13,10 @@ import { AboutComponent } from './components/about/about.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ContactComponent } from './components/contact/contact.component';
 
+import { RestApiService } from './services/rest-api.service';
+import { DataService } from './services/data.service';
+import { MessageComponent } from './components/message/message.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,8 @@ import { ContactComponent } from './components/contact/contact.component';
     AboutComponent,
     ShopComponent,
     NavbarComponent,
-    ContactComponent
+    ContactComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,10 @@ import { ContactComponent } from './components/contact/contact.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    RestApiService,
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
