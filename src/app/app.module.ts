@@ -16,6 +16,10 @@ import { ContactComponent } from './components/contact/contact.component';
 import { RestApiService } from './services/rest-api.service';
 import { DataService } from './services/data.service';
 import { MessageComponent } from './components/message/message.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { LoginComponent } from './components/login/login.component';
+import { IdentifyComponent } from './components/identify/identify.component';
+import { LoginRegisterNavComponent } from './components/identify/login-register-nav/login-register-nav.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { MessageComponent } from './components/message/message.component';
     ShopComponent,
     NavbarComponent,
     ContactComponent,
-    MessageComponent
+    MessageComponent,
+    RegistrationComponent,
+    LoginComponent,
+    IdentifyComponent,
+    LoginRegisterNavComponent
   ],
   imports: [
     BrowserModule,
