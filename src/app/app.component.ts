@@ -9,37 +9,8 @@ import { DataService } from './services/data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'amazone-store-Frontend';
-  searchTerm = '';
-  isCollapsed = true;
 
   constructor(private router:Router, private data:DataService)
   {
-  }
-
-  gettoken()
-  {
-    return localStorage.getItem('token');
-  }
-
-  collapse()
-  {
-    this.isCollapsed = true;
-  }
-
-  closeDropdown(dropdown)
-  {
-    dropdown.close();
-  }
-
-  logout()
-  {
-    localStorage.clear();
-    this.router.navigate(['']);
-  }
-
-  search()
-  {
-    
   }
 }
