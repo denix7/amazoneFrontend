@@ -9,6 +9,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { IdentifyComponent } from './components/identify/identify.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
     {
@@ -34,6 +35,7 @@ const routes: Routes = [
     {
         path: 'identify',
         component: IdentifyComponent,
+        canActivate: [AuthGuardService],
         children: [
             {
                 path: 'register',

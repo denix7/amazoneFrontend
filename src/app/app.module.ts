@@ -20,6 +20,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { IdentifyComponent } from './components/identify/identify.component';
 import { LoginRegisterNavComponent } from './components/identify/login-register-nav/login-register-nav.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { LoginRegisterNavComponent } from './components/identify/login-register-
   ],
   providers: [
     RestApiService,
-    DataService
+    DataService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
