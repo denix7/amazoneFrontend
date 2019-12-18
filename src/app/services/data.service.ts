@@ -11,6 +11,8 @@ export class DataService {
   message = '';
   messageType = 'danger';
 
+  user:any;
+
   constructor(private router:Router, private rest:RestApiService) {
     this.router.events.subscribe(event => {
       this.message = '';
@@ -35,8 +37,19 @@ export class DataService {
     this.message = message;
   }
 
-  getProfile()
+  async getProfile()
   {
-    return this.rest.get('http://localhost:3030/api/accounts/profile');
+    try{
+      if(localStorage.getItem('token'))
+      {
+        const data = await this.rest.get('http://localhost:3030/api/accounts/profile');
+        this.user = data['user'];
+        console.warn(this.user[0].email);
+      }
+    }
+    catch(error)
+    {
+      this.error(error);
+    }
   }
 }

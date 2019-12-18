@@ -10,7 +10,6 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent {
 
-  constructor(private router:Router, private data:DataService)
-  {
-  }
+  constructor(private router:Router)
+  {}
 }

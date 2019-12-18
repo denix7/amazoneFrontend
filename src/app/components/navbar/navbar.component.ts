@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,10 +12,12 @@ export class NavbarComponent implements OnInit {
   searchTerm = '';
   isCollapsed = true;
 
-  constructor(private router:Router) { }
-
+  constructor(private router:Router, private data: DataService) {
+    this.data.getProfile();
+  }
+  
   ngOnInit() {}
-
+  
   getToken()
   {
     return localStorage.getItem('token');
@@ -37,6 +40,7 @@ export class NavbarComponent implements OnInit {
 
   logout()
   {
+    this.data.user = null;
     localStorage.clear();
     this.router.navigate(['']);
   }
