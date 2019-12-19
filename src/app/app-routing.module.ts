@@ -10,6 +10,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { IdentifyComponent } from './components/identify/identify.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
     {
@@ -31,6 +32,10 @@ const routes: Routes = [
     {
         path: 'contact',
         component: ContactComponent
+    },
+    {
+        path: 'profile',
+        component: ProfileComponent
     },
     {
         path: 'identify',
@@ -60,7 +65,7 @@ const routes: Routes = [
         path: '**',
         pathMatch: 'full',
         redirectTo: 'home'
-    },
+    }
 ];
 
 @NgModule({

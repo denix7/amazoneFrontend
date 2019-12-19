@@ -34,12 +34,12 @@
                         <ul class="site-menu js-clone-nav d-none d-md-block">
                             <li class="has-children active">
                               <a routerLink = "identify"><span class="icon icon-person"></span>
-                                <div *ngIf="data.user">
+                                <div *ngIf="this.data.user">
                                     {{this.data.user[0].name}}
                                 </div>
                               </a>
                               <ul class="dropdown">
-                                <li><a>Mi perfil</a></li>
+                                <li><a routerLink="profile">Mi perfil</a></li>
                                 <li><a (click) = logout()>Salir</a></li>
                               </ul>
                             </li>
