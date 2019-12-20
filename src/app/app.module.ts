@@ -22,6 +22,7 @@ import { IdentifyComponent } from './components/identify/identify.component';
 import { LoginRegisterNavComponent } from './components/identify/login-register-nav/login-register-nav.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ProfilesettingsComponent } from './components/profilesettings/profilesettings.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     LoginComponent,
     IdentifyComponent,
     LoginRegisterNavComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProfilesettingsComponent
   ],
   imports: [
     BrowserModule,

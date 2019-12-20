@@ -12,15 +12,15 @@
                   <div class="block-38 text-center">
                     <div class="block-38-img">
                       <div class="block-38-header">
-                        <img [src]="this.data.user[0].image" alt="Image placeholder" class="mb-4">
-                        <h3 class="block-38-heading h4">{{this.data.user[0].name}}</h3>
-                        <p class="block-38-subheading">{{this.data.user[0].email}}</p>
-                        <div *ngIf="this.data.user[0].isSeller">
+                        <img [src]="this.data.user.image" alt="Image placeholder" class="mb-4">
+                        <h3 class="block-38-heading h4">{{this.data.user.name}}</h3>
+                        <p class="block-38-subheading">{{this.data.user.email}}</p>
+                        <div *ngIf="this.data.user.isSeller">
                             <p class="block-38-subheading">Seller</p>
                         </div>
                       </div>
                       <div class="block-38-body">
-                        <p>Usuario desde el {{this.data.user[0].creationDate}}</p>
+                        <p>Usuario desde el {{this.data.user.creationDate}}</p>
                       </div>
                     </div>
                   </div>

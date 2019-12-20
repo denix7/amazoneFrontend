@@ -44,7 +44,11 @@ export class DataService {
       {
         const data = await this.rest.get('http://localhost:3030/api/accounts/profile');
         this.user = data['user'];
-        console.warn(this.user[0].email);
+        // console.warn(this.user[0].email);
+      }
+      else
+      {
+        this.router.navigate(['/']);
       }
     }
     catch(error)
