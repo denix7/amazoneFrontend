@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfilesettingsComponent } from './components/profilesettings/profilesettings.component';
+import { ProfileaddressComponent } from './components/profileaddress/profileaddress.component';
 
 const routes: Routes = [
     {
@@ -44,6 +45,11 @@ const routes: Routes = [
         component: ProfilesettingsComponent,
         canActivate: [AuthGuardService]
 
+    },
+    {
+        path: 'profile/address',
+        component: ProfileaddressComponent,
+        canActivate: [AuthGuardService]
     },
     {
         path: 'identify',

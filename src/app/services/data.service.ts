@@ -12,6 +12,7 @@ export class DataService {
   messageType = 'danger';
 
   user:any;
+  address:any;
 
   constructor(private router:Router, private rest:RestApiService) {
     this.router.events.subscribe(event => {
@@ -43,12 +44,32 @@ export class DataService {
       if(localStorage.getItem('token'))
       {
         const data = await this.rest.get('http://localhost:3030/api/accounts/profile');
+        console.warn(data)
         this.user = data['user'];
-        // console.warn(this.user[0].email);
+        if(!data['success'])
+        {
+          localStorage.clear();
+          this.router.navigate(['/']);
+        }
       }
       else
       {
         this.router.navigate(['/']);
+      }
+    }
+    catch(error)
+    {
+      this.error(error);
+    }
+  }
+
+  async getAddress()
+  {
+    try{
+      if(localStorage.getItem('token'))
+      {
+        const data = await this.rest.get('http://localhost:3030/api/accounts/address');
+        this.address = data['address'];
       }
     }
     catch(error)

@@ -26,7 +26,6 @@ export class ProfilesettingsComponent implements OnInit {
         newPwd: '',
         pwdConfirm: ''
       }, this.data.user);
-      console.warn(this.currentSettings);
     }
     catch(error)
     {
