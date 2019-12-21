@@ -24,6 +24,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfilesettingsComponent } from './components/profilesettings/profilesettings.component';
 import { ProfileaddressComponent } from './components/profileaddress/profileaddress.component';
+import { ProfileaddresseditComponent } from './components/profileaddressedit/profileaddressedit.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ProfileaddressComponent } from './components/profileaddress/profileaddr
     LoginRegisterNavComponent,
     ProfileComponent,
     ProfilesettingsComponent,
-    ProfileaddressComponent
+    ProfileaddressComponent,
+    ProfileaddresseditComponent
   ],
   imports: [
     BrowserModule,

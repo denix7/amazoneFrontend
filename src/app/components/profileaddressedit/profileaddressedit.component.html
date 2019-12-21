@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="col-md-6">
+        <div class="card">
+        <div class="card-header text-center">
+            Mi direccion
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <div *ngIf="data.message">
+              <app-message></app-message>
+            </div>
+            <div *ngIf="!currentSettings">
+                <h1 class="text-center display-3 mt-5">
+                    <i class="fa fa-spinner" aria-hidden="true"></i>
+                </h1>
+            </div>
+          </div>
+        </div>
+
+            <div class="card-body">
+                <div *ngIf="currentAddress">
+                    <div class="col-md-12">
+                
+                        <form action="#" method="post">
+                          <div class="p-3 p-lg-5 border">
+                            <div class="form-group row">
+                              <div class="col-md-12">
+                                <input type="text" class="form-control" id="c_name" name="c_name" placeholder="Direccion 1" [(ngModel)]="this.currentAddress.addr1">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-md-12">
+                                <input type="text" class="form-control" id="c_direccion2" name="c_direccion2" placeholder="Direccion 2" [(ngModel)]="currentAddress.addr2">
+                              </div>
+                            </div>
+          
+                            <div class="form-group row">
+                              <div class="col-md-12">
+                                <input type="text" class="form-control" id="c_city" name="c_city" placeholder="City" [(ngModel)]="currentAddress.city">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-md-12">
+                                <input type="text" class="form-control" id="c_telephone1" name="c_telephone1" placeholder="Telephone1" [(ngModel)]="currentAddress.telephone1">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-md-12">
+                                <input type="text" class="form-control" id="c_telephone2" name="c_telephone2" placeholder="Telephone2" [(ngModel)]="currentAddress.telephone2">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-md-12">
+                                <input type="text" class="form-control" id="c_state" name="c_state" placeholder="State" [(ngModel)]="currentAddress.state">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-md-12">
+                                <input type="text" class="form-control" id="c_postalcode" name="c_postalcode" placeholder="Postal code" [(ngModel)]="currentAddress.postalCode">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-lg-12">
+                                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Actualizar datos" (click)="updateAddress()" [disabled]="btnDisabled">
+                              </div>
+                            </div>
+                            <p>Al crear una cuenta estas aceptando lo <a href="">terminos y condiciones</a> de Amazone y Politica de privacidad</p>
+                          </div>
+                        </form>
+                        
+                      </div>
+                    <!-- <p class="card-title"><span class="icon icon-person"></span> {{data.user.name}}</p>
+                    <p ><span class="icon icon-map-marker"></span> {{data.address.city}}, {{data.address.state}}, {{this.data.address.addr1}}</p>
+                    <p class="card-text"><span class="icon icon-phone"></span> {{data.address.telephone1}}</p>
+                    <p class="card-text"><span class="icon icon-mobile"></span> {{data.address.telephone2}}</p>
+                    <p class="card-text"><span class="icon icon-map"></span> {{data.address.postalCode}}</p>
+                    <a href="#" class="btn btn-outline-danger" [routerLink]="['/profile/address/edit']">Modificar</a>     -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,19 +1,24 @@
 
 <div class="container">
+    <div class="row">
+        <div *ngIf="data.message">
+            <app-message></app-message>
+        </div>
+    </div>
     <div class="col-md-6">
         <div class="card">
         <div class="card-header text-center">
             Mi direccion
         </div>
             <div class="card-body">
-                <div *ngIf="data.address && data.user">
+                <div *ngIf="currentAddress">
                     <p class="card-title"><span class="icon icon-person"></span> {{data.user.name}}</p>
-                    <p ><span class="icon icon-map-marker"></span> {{data.address.city}}, {{data.address.state}}, {{this.data.address.addr1}}</p>
-                    <p class="card-text"><span class="icon icon-phone"></span> {{data.address.telephone1}}</p>
-                    <p class="card-text"><span class="icon icon-mobile"></span> {{data.address.telephone2}}</p>
-                    <p class="card-text"><span class="icon icon-map"></span> {{data.address.postalCode}}</p>
-                    <a href="#" class="btn btn-outline-danger">Modificar</a>    
+                    <p><span class="icon icon-map-marker"></span> {{currentAddress.city}}, {{currentAddress.state}}, {{currentAddress.addr1}}</p>
+                    <p class="card-text"><span class="icon icon-phone"></span> {{currentAddress.telephone1}}</p>
+                    <p class="card-text"><span class="icon icon-mobile"></span> {{currentAddress.telephone2}}</p>
+                    <p class="card-text"><span class="icon icon-map"></span> {{currentAddress.postalCode}}</p>
                 </div>
+                <a href="#" class="btn btn-outline-danger" [routerLink]="['/profile/address/edit']">Modificar</a>    
             </div>
         </div>
     </div>
