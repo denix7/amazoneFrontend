@@ -1,0 +1,38 @@
+<div class="container">
+    <div *ngIf="data.message">
+        <app-message></app-message>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-8">
+                <input type="text" class="form-control mr-2" placeholder="Add Category" [(ngModel)]="newCategory">
+            </div>
+
+            <div class="col-md-4">
+                <button class="btn btn-outline-primary btn-xs" (click)="saveCategory()">+</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" *ngFor="let category of categories">
+        <div class="col-md-9">
+            <p>{{category.name}}</p>
+        </div>
+            
+        <div class="col-md-3">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" [routerLink]="['/categories', category._id]" routerLinkActive="router-link-active" >
+                Edit
+            </button>
+                
+            <button class="btn btn-outline-danger btn-xs ml-2">Remove</button>
+        </div>
+</div>
+
+
+
+
+
+

@@ -14,6 +14,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ProfilesettingsComponent } from './components/profilesettings/profilesettings.component';
 import { ProfileaddressComponent } from './components/profileaddress/profileaddress.component';
 import { ProfileaddresseditComponent } from './components/profileaddressedit/profileaddressedit.component';
+import { CategoryComponent } from './components/category/category.component';
+import { CategoryEditComponent } from './components/category-edit/category-edit.component';
 
 const routes: Routes = [
     {
@@ -41,6 +43,28 @@ const routes: Routes = [
         component: ProfileComponent,
         canActivate: [AuthGuardService]
     },
+    {
+        path: 'categories',
+        component: CategoryComponent,
+        children: [
+            {
+                path:"",
+                component: CategoryComponent
+            },
+            // {
+            //     path: ':categoryId',
+            //     component: CategoryEditComponent,
+                
+            // },
+        ]
+    },
+    
+    {
+        path: 'categories/:categoryId',
+        component: CategoryEditComponent,
+        
+    },
+    
     {
         path: 'profile/settings',
         component: ProfilesettingsComponent,
@@ -85,7 +109,7 @@ const routes: Routes = [
         path: '**',
         pathMatch: 'full',
         redirectTo: 'home'
-    }
+    },
 ];
 
 @NgModule({

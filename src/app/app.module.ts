@@ -25,6 +25,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ProfilesettingsComponent } from './components/profilesettings/profilesettings.component';
 import { ProfileaddressComponent } from './components/profileaddress/profileaddress.component';
 import { ProfileaddresseditComponent } from './components/profileaddressedit/profileaddressedit.component';
+import { CategoryComponent } from './components/category/category.component';
+import { CategoryEditComponent } from './components/category-edit/category-edit.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { ProfileaddresseditComponent } from './components/profileaddressedit/pro
     ProfileComponent,
     ProfilesettingsComponent,
     ProfileaddressComponent,
-    ProfileaddresseditComponent
+    ProfileaddresseditComponent,
+    CategoryComponent,
+    CategoryEditComponent
   ],
   imports: [
     BrowserModule,
