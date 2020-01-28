@@ -28,9 +28,16 @@
 
                 <div class="col-md-6 col-lg-9 text-center">
                     <button class="btn btn-outline-primary ml-2" routerLink="/profile/orders">Orders</button>
-                    <button class="btn btn-outline-danger ml-2" routerLink="/profile/myproducts">My products</button>
-                    <button class="btn btn-outline-warning ml-2" routerLink="/profile/saleproduct">Sale product</button>
-                </div>
+                    <button class="btn btn-outline-danger ml-2" routerLink="products/my-products">My products</button>
+                    <button class="btn btn-outline-warning ml-2" routerLink="products/sale-product">Sale product</button>
+                
+                    <div class="container">
+                      <div class="row">
+                        <router-outlet></router-outlet>
+                      </div>
+                    </div>
+
+                  </div>
               </div>
             </div>
           </div>

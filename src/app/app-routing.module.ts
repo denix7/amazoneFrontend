@@ -16,6 +16,8 @@ import { ProfileaddressComponent } from './components/profileaddress/profileaddr
 import { ProfileaddresseditComponent } from './components/profileaddressedit/profileaddressedit.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CategoryEditComponent } from './components/category-edit/category-edit.component';
+import { ProductSaleComponent } from './components/product-sale/product-sale.component';
+import { ProductsMeComponent } from './components/products-me/products-me.component';
 
 const routes: Routes = [
     {
@@ -41,7 +43,17 @@ const routes: Routes = [
     {
         path: 'profile',
         component: ProfileComponent,
-        canActivate: [AuthGuardService]
+        canActivate: [AuthGuardService],
+        children: [
+            {
+                path: 'products/sale-product',
+                component: ProductSaleComponent
+            },
+            {
+                path: 'products/my-products',
+                component: ProductsMeComponent
+            }
+        ]
     },
     {
         path: 'categories',
