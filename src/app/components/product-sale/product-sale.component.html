@@ -39,7 +39,10 @@
 
                     <div class="form-group row">
                     <div class="col-lg-12">
-                      <input type="file" class="form-control-file" name="file0" placeholder="image">
+                        <angular-file-uploader
+                            [config]="afuConfig"
+                            (ApiResponse)="imageUpload($event)">
+                        </angular-file-uploader>
                     </div>
                   </div>
 

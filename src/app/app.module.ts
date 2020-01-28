@@ -30,6 +30,7 @@ import { CategoryEditComponent } from './components/category-edit/category-edit.
 import { ProductSaleComponent } from './components/product-sale/product-sale.component';
 import { ProductsMeComponent } from './components/products-me/products-me.component';
 
+import { AngularFileUploaderModule } from "angular-file-uploader";
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,8 @@ import { ProductsMeComponent } from './components/products-me/products-me.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFileUploaderModule
   ],
   providers: [
     RestApiService,
