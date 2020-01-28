@@ -72,6 +72,23 @@ export class CategoryComponent implements OnInit {
 
   async deleteCategoy(id)
   {
+    try
+    {
+      const data = await this.rest.delete('http://localhost:3030/api/categories/'+ id);
 
+      if(data['success'])
+      {
+        this.data.success('Category deleted successful');
+        this.getCategories();
+      }
+      else
+      {
+        this.data.error(data['message']);
+      }
+    }
+    catch(error)
+    {
+      this.data.error(error['message']);
+    }
   }
 }
