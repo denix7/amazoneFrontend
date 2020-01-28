@@ -1,1 +1,57 @@
-<p>product-sale works!</p>
+<div class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div *ngIf="data.message">
+                  <app-message></app-message>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+                
+              <form action="#" method="post">
+                <div class="p-3 p-lg-5 border">
+                  <div class="form-group row">
+                    <div class="col-md-12">
+                      <input type="text" class="form-control" name="name" placeholder="Nombre del producto" [(ngModel)]="name">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-12">
+                      <input type="text" class="form-control" name="price" placeholder="Price $" [(ngModel)]="price">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-12">
+                      <textarea type="text" class="form-control" name="description" placeholder="description" [(ngModel)]="description"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="col-lg-12">
+                          <select class="form-control">
+                              <option value="value1" selected>category</option>
+                              <option value="value1">valor2</option>
+                          </select>
+                      </div>
+                  </div>
+
+                    <div class="form-group row">
+                    <div class="col-lg-12">
+                      <input type="file" class="form-control-file" name="file0" placeholder="image">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-lg-12">
+                      <input type="submit" class="btn btn-primary btn-lg btn-block" value="Crear producto" (click)="createProduct()" [disabled]="btnDisabled">
+                    </div>
+                  </div>
+                </div>
+              </form>
+              
+            </div>
+        </div>
+    </div>
+</div>
