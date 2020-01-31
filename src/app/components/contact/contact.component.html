@@ -10,45 +10,109 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h2 class="h3 mb-3 text-black">Get In Touch</h2>
+              <h2 class="h3 mb-3 text-black">Contacto</h2>
             </div>
             <div class="col-md-7">
   
-              <form action="#" method="post">
+              <form (ngSubmit)="contactForm(form.value)" #form="ngForm" name="form" novalidate>
                 
                 <div class="p-3 p-lg-5 border">
                   <div class="form-group row">
-                    <div class="col-md-6">
-                      <label for="c_fname" class="text-black">First Name <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="c_fname" name="c_fname">
+                    <div class="col-md-6" [ngClass]="{'has-danger': nombre.errors?.required || nombre.errors?.minlength}">
+                      <label for="c_fname" class="text-black">Nombre <span class="text-danger">*</span></label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        name="nombre" 
+                        id="c_nombre"
+                        [(ngModel)]="formulario.nombre"
+                        required 
+                        minlength="3"
+                        #nombre="ngModel">
+
+                        <div *ngIf="nombre.errors?.required && touched" class="alert alert-danger">
+                          El campo es obligatorio
+                        </div>
+
+                        <div *ngIf="nombre.errors?.minlength" class="alert alert-danger">
+                          Minimo 3 caracteres
+                        </div>
                     </div>
+
                     <div class="col-md-6">
-                      <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="c_lname" name="c_lname">
+                      <label for="c_lname" class="text-black">Apellido <span class="text-danger">*</span></label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        name="apellido" 
+                        id="c_apellido"
+                        [(ngModel)]="formulario.apellido"
+                        required
+                        minlength="4"
+                        #apellido="ngModel">
+
+                        <div *ngIf="apellido.errors?.required && touched" class="alert alert-danger">
+                          El campo es obligatorio
+                        </div>
+                        <div *ngIf="apellido.errors?.minlength" class="alert alert-danger">
+                          Minimo 4 caracteres
+                        </div>
                     </div>
                   </div>
+
                   <div class="form-group row">
                     <div class="col-md-12">
                       <label for="c_email" class="text-black">Email <span class="text-danger">*</span></label>
-                      <input type="email" class="form-control" id="c_email" name="c_email" placeholder="">
+                      <input
+                       type="email" 
+                       class="form-control" 
+                       id="c_email" 
+                       name="email" 
+                       placeholder="email" 
+                       [(ngModel)]="formulario.email"
+                       required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                       required
+                       #email="ngModel">
+
+                       <div *ngIf="email.errors?.required && dirty" class="alert alert-danger">
+                        El email es obligatorio
+                       </div>
+                       <div *ngIf="email.errors?.pattern" class="alert alert-danger">
+                        No cumple el formato
+                       </div>
                     </div>
                   </div>
+
+
                   <div class="form-group row">
                     <div class="col-md-12">
                       <label for="c_subject" class="text-black">Subject </label>
-                      <input type="text" class="form-control" id="c_subject" name="c_subject">
+                      <input
+                       type="text" 
+                       class="form-control" 
+                       name="asunto" 
+                       id="c_asunto"
+                       [(ngModel)]="formulario.asunto">
                     </div>
                   </div>
   
                   <div class="form-group row">
                     <div class="col-md-12">
                       <label for="c_message" class="text-black">Message </label>
-                      <textarea name="c_message" id="c_message" cols="30" rows="7" class="form-control"></textarea>
+                      <textarea 
+                        name="c_message" 
+                        id="c_message" 
+                        cols="30" rows="7" 
+                        name="mensaje" 
+                        id="c_mensaje"
+                        class="form-control" 
+                        [(ngModel)]="formulario.mensaje"
+                        ></textarea>
                     </div>
                   </div>
                   <div class="form-group row">
                     <div class="col-lg-12">
-                      <input type="submit" class="btn btn-primary btn-lg btn-block" value="Send Message">
+                      <input [disabled]="!form.valid" type="submit" class="btn btn-primary btn-lg btn-block" value="Send Message">
                     </div>
                   </div>
                 </div>
@@ -67,7 +131,6 @@
                 <span class="d-block text-primary h6 text-uppercase">Canada</span>
                 <p class="mb-0">203 Fake St. Mountain View, San Francisco, California, USA</p>
               </div>
-  
             </div>
           </div>
         </div>
