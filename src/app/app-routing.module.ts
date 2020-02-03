@@ -18,6 +18,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { CategoryEditComponent } from './components/category-edit/category-edit.component';
 import { ProductSaleComponent } from './components/product-sale/product-sale.component';
 import { ProductsMeComponent } from './components/products-me/products-me.component';
+import { ProductsByCategoryComponent } from './components/shop/products-by-category/products-by-category.component';
 
 const routes: Routes = [
     {
@@ -34,7 +35,13 @@ const routes: Routes = [
     },
     {
         path: 'shop',
-        component: ShopComponent
+        component: ShopComponent,
+        children: [
+        ]
+    },
+    {
+        path: 'shop/category/:id',
+        component: ProductsByCategoryComponent
     },
     {
         path: 'contact',

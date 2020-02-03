@@ -31,6 +31,8 @@ import { ProductSaleComponent } from './components/product-sale/product-sale.com
 import { ProductsMeComponent } from './components/products-me/products-me.component';
 
 import { AngularFileUploaderModule } from "angular-file-uploader";
+import { ProductsByCategoryComponent } from './components/shop/products-by-category/products-by-category.component';
+import { CategoryListComponent } from './components/shop/category-list/category-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +54,9 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     CategoryComponent,
     CategoryEditComponent,
     ProductSaleComponent,
-    ProductsMeComponent
+    ProductsMeComponent,
+    ProductsByCategoryComponent,
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,
