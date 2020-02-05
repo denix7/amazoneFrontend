@@ -33,6 +33,8 @@ import { ProductsMeComponent } from './components/products-me/products-me.compon
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { ProductsByCategoryComponent } from './components/shop/products-by-category/products-by-category.component';
 import { CategoryListComponent } from './components/shop/category-list/category-list.component';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,8 @@ import { CategoryListComponent } from './components/shop/category-list/category-
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    NgbModule
   ],
   providers: [
     RestApiService,
