@@ -3,14 +3,14 @@
           <div class="row">
             <div class="col-md-12">
               <div class="row">
-                <!-- <div *ngIf="data.message">
+                <div *ngIf="data.message">
                   <app-message></app-message>
-                </div> -->
+                </div>
               </div>
             </div>
             <div class="col-md-12">
                 
-              <form (ngSubmit)="createProduct(form.value)" #form="ngForm" name="form" novalidate>
+              <form (ngSubmit)="createProduct()" #form="ngForm" name="form" novalidate>
                 <div class="p-3 p-lg-5 border">
                   <div class="form-group row">
                     <div class="col-md-12" [ngClass]="{'has-danger': name.errors?.required || name.errors?.minlength}">
@@ -19,7 +19,7 @@
                         class="form-control" 
                         name="name" 
                         placeholder="Nombre del producto" 
-                        [(ngModel)]="formulario.name"
+                        [(ngModel)]="producto.name"
                         required
                         minlength="3"
                         #name="ngModel"
@@ -38,7 +38,7 @@
                         class="form-control" 
                         name="price" 
                         placeholder="Price $" 
-                        [(ngModel)]="formulario.price"
+                        [(ngModel)]="producto.price"
                         required
                         #price="ngModel"
                       >
@@ -55,18 +55,30 @@
                         class="form-control" 
                         name="description" 
                         placeholder="description" 
-                        [(ngModel)]="formulario.description"
-                        requerid>
+                        [(ngModel)]="producto.description"
+                        requerid
+                        #description="ngModel">
                       </textarea>
+                        
+                      <div *ngIf="description.errors?.required" class="alert alert-danger">
+                        La descripicon es obligatorio
+                      </div>
+
                     </div>
                   </div>
 
                   <div class="form-group">
                       <div class="col-lg-12">
-                          <select class="form-control">
-                              <option value="value1" selected>category</option>
-                              <option value="value1">valor2</option>
+                          <select class="form-control" [(ngModel)]="producto.categoryId" name="categoryId" required #category="ngModel">
+                              <option 
+                                [value]="category._id" 
+                                selected *ngFor="let category of categories">{{category.name}}
+                              </option>
                           </select>
+
+                          <div *ngIf="category.errors?.required" class="alert alert-danger">
+                            La categoria es obligatorio
+                          </div>
                       </div>
                   </div>
 
@@ -85,7 +97,7 @@
                         type="submit" 
                         class="btn btn-primary btn-lg btn-block" 
                         value="Crear producto" 
-                        [disabled]="btnDisabled">
+                        [disabled]="!form.valid">
                     </div>
                   </div>
                 </div>

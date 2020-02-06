@@ -10,16 +10,15 @@ import { Router } from '@angular/router';
 })
 export class ProductSaleComponent implements OnInit {
 
-  formulario = {
+  categories = [];
+
+  producto = {
     name: '',
     price: '',
     description: '',
-    image: null,
-    category: ''
+    image: '',
+    categoryId: ''
   }
-
-  image:string;
-
 
   afuConfig = {
     multiple: false,
@@ -32,19 +31,20 @@ export class ProductSaleComponent implements OnInit {
     hideProgressBar: false,
     hideResetBtn: false,
     hideSelectBtn: false,
-}; 
+  }; 
 
 
 
   constructor(private router: Router, private rest: RestApiService, private data:DataService) { }
 
   ngOnInit() {
+    this.getCategories()
   }
 
-  async createProduct(form)
+  async createProduct()
   {
     try{
-      const data = await this.rest.post('http://localhost:3030/api/seller/products', form);
+      const data = await this.rest.post('http://localhost:3030/api/seller/products', this.producto);
 
     if(data['success'])
     {
@@ -65,6 +65,27 @@ export class ProductSaleComponent implements OnInit {
   imageUpload(data)
   {
     let image_data = JSON.parse(data.response);
-    this.formulario.image = image_data.image;
+    console.warn(image_data)
+    this.producto.image = image_data.image;
+    console.warn(this.producto.image)
+    // this.formulario.assign(obj, {prop: "value"})
+    console.log(this.producto)
+  }
+
+  async getCategories()
+  {
+    try{
+      const data = await this.rest.get('http://localhost:3030/api/categories'); 
+
+      data['success']
+      ? (this.categories = data['categories'])
+      : this.data.error(data['message']);
+
+      console.warn(this.categories)
+    }
+    catch(error)
+    {
+      this.data.error(error['message']);
+    }
   }
 }
