@@ -10,12 +10,15 @@ import { Router } from '@angular/router';
 })
 export class ProductSaleComponent implements OnInit {
 
-  private name:string = '';
-  private price:string = '';
-  private description:string = '';
-  private image = null;
-  private category:string;
+  formulario = {
+    name: '',
+    price: '',
+    description: '',
+    image: null,
+    category: ''
+  }
 
+  image:string;
 
 
   afuConfig = {
@@ -38,16 +41,10 @@ export class ProductSaleComponent implements OnInit {
   ngOnInit() {
   }
 
-  async createProduct()
+  async createProduct(form)
   {
     try{
-      const data = await this.rest.post('http://localhost:3030/api/seller/products', 
-    {
-      name : this.name,
-      price : this.price,
-      description: this.description,
-      image: this.image
-    });
+      const data = await this.rest.post('http://localhost:3030/api/seller/products', form);
 
     if(data['success'])
     {
@@ -68,6 +65,6 @@ export class ProductSaleComponent implements OnInit {
   imageUpload(data)
   {
     let image_data = JSON.parse(data.response);
-    this.image = image_data.image;
+    this.formulario.image = image_data.image;
   }
 }
