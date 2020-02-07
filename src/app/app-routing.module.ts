@@ -37,12 +37,10 @@ const routes: Routes = [
     {
         path: 'shop',
         component: ShopComponent,
-        children: [
-        ]
     },
     {
         path: 'shop/category/:id',
-        component: ProductsByCategoryComponent
+        component: ProductsByCategoryComponent,
     },
     {
         path: 'shop/single/:productId',
@@ -75,14 +73,8 @@ const routes: Routes = [
                 path:"",
                 component: CategoryComponent
             },
-            // {
-            //     path: ':categoryId',
-            //     component: CategoryEditComponent,
-                
-            // },
         ]
     },
-    
     {
         path: 'categories/:categoryId',
         component: CategoryEditComponent,
