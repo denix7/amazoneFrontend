@@ -49,14 +49,18 @@
             <!-- Products -->
             <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up" *ngFor="let product of products">
               <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                  <a href="shop-single.html"><img src="{{'http://localhost:3030/api/seller/products/get-image/' + product.image}}" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                  <h3><a routerLink="/product/{{product._id}}">{{product.name}}</a></h3>
-                  <!-- <p class="mb-0">{{product.description}}</p> -->
-                  <p class="text-primary font-weight-bold">{{product.price}}</p>
-                </div>
+
+                <a [routerLink]="['/shop/single', product._id]" >
+                  <figure class="block-4-image">
+                    <img src="{{'http://localhost:3030/api/seller/products/get-image/' + product.image}}" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a routerLink="/product/{{product._id}}">{{product.name}}</a></h3>
+                    <!-- <p class="mb-0">{{product.description}}</p> -->
+                    <p class="text-primary font-weight-bold">{{product.price}}</p>
+                  </div>
+                </a>
+                
               </div>
             </div>
           </div>

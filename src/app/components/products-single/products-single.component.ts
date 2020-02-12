@@ -13,6 +13,12 @@ export class ProductsSingleComponent implements OnInit {
   product;
   productId;
 
+  myReview = {
+    title: '',
+    description: '',
+    rating: 0
+  }
+
   constructor(private activatedRoute:ActivatedRoute, private rest:RestApiService, private data:DataService) { }
 
   ngOnInit() {
@@ -34,7 +40,6 @@ export class ProductsSingleComponent implements OnInit {
       ? (this.product = data['product'])
       : this.data.error(data['message']);
 
-      console.warn(this.product);
     }
     catch(error)
     {
@@ -42,4 +47,35 @@ export class ProductsSingleComponent implements OnInit {
     }
   }
 
+  async postReview()
+  {
+    try{
+      const data = this.rest.post('http://localhost:3030/api/products/review' ,
+      {
+        productId: this.productId,
+        title: this.myReview.title,
+        description: this.myReview.description,
+        rating: this.myReview.rating
+      });
+
+      data['success']
+      ? (this.data.success(data['message']))
+      : this.data.error(data['message']);
+
+      this.getProduct();
+      this.cleanForm();
+    }
+    catch(error)
+    {
+      this.data.error(error['message']);
+    }
+
+  }
+
+  async cleanForm()
+  {
+    this.myReview.title = '';
+    this.myReview.description = '';
+    this.myReview.rating = 0;
+  }
 }
