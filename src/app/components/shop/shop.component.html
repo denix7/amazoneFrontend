@@ -45,149 +45,16 @@
                 <!-- Products -->
                 <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up" *ngFor="let product of products">
                   <div class="block-4 text-center border">
+                    <a [routerLink]="['/shop/single', product._id]" routerLinkActive="router-link-active" >
                     <figure class="block-4-image">
-                      <a href="shop-single.html"><img src="{{'http://localhost:3030/api/seller/products/get-image/' + product.image}}" alt="Image placeholder" class="img-fluid"></a>
+                      <img src="{{'http://localhost:3030/api/seller/products/get-image/' + product.image}}" alt="Image placeholder" class="img-fluid">
                     </figure>
-                    <div class="block-4-text p-4">
-                      <h3><a href="shop-single.html">{{product.name}}</a></h3>
+                    <div class="block-4-text p-4 text-black">
+                      <h3 class="text-black">{{product.name}}</h3>
                       <!-- <p class="mb-0">{{product.description}}</p> -->
                       <p class="text-primary font-weight-bold">{{product.price}}</p>
                     </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                  <div class="block-4 text-center border">
-                    <figure class="block-4-image">
-                      <a href="shop-single.html"><img src="../assets/images/shoe_1.jpg" alt="Image placeholder" class="img-fluid"></a>
-                    </figure>
-                    <div class="block-4-text p-4">
-                      <h3><a href="shop-single.html">Corater</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                  <div class="block-4 text-center border">
-                    <figure class="block-4-image">
-                      <a href="shop-single.html"><img src="../assets/images/cloth_2.jpg" alt="Image placeholder" class="img-fluid"></a>
-                    </figure>
-                    <div class="block-4-text p-4">
-                      <h3><a href="shop-single.html">Polo Shirt</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                  <div class="block-4 text-center border">
-                    <figure class="block-4-image">
-                      <a href="shop-single.html"><img src="../assets/images/cloth_3.jpg" alt="Image placeholder" class="img-fluid"></a>
-                    </figure>
-                    <div class="block-4-text p-4">
-                      <h3><a href="shop-single.html">T-Shirt Mockup</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                  <div class="block-4 text-center border">
-                    <figure class="block-4-image">
-                      <a href="shop-single.html"><img src="../assets/images/shoe_1.jpg" alt="Image placeholder" class="img-fluid"></a>
-                    </figure>
-                    <div class="block-4-text p-4">
-                      <h3><a href="shop-single.html">Corater</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                  <div class="block-4 text-center border">
-                    <figure class="block-4-image">
-                      <a href="shop-single.html"><img src="../assets/images/cloth_1.jpg" alt="Image placeholder" class="img-fluid"></a>
-                    </figure>
-                    <div class="block-4-text p-4">
-                      <h3><a href="shop-single.html">Tank Top</a></h3>
-                      <p class="mb-0">Finding perfect t-shirt</p>
-                      <p class="text-primary font-weight-bold">$50</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                  <div class="block-4 text-center border">
-                    <figure class="block-4-image">
-                      <a href="shop-single.html"><img src="../assets/images/shoe_1.jpg" alt="Image placeholder" class="img-fluid"></a>
-                    </figure>
-                    <div class="block-4-text p-4">
-                      <h3><a href="shop-single.html">Corater</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                  <div class="block-4 text-center border">
-                    <figure class="block-4-image">
-                      <a href="shop-single.html"><img src="../assets/images/cloth_2.jpg" alt="Image placeholder" class="img-fluid"></a>
-                    </figure>
-                    <div class="block-4-text p-4">
-                      <h3><a href="shop-single.html">Polo Shirt</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                  <div class="block-4 text-center border">
-                    <figure class="block-4-image">
-                      <a href="shop-single.html"><img src="../assets/images/cloth_3.jpg" alt="Image placeholder" class="img-fluid"></a>
-                    </figure>
-                    <div class="block-4-text p-4">
-                      <h3><a href="shop-single.html">T-Shirt Mockup</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                  <div class="block-4 text-center border">
-                    <figure class="block-4-image">
-                      <a href="shop-single.html"><img src="../assets/images/shoe_1.jpg" alt="Image placeholder" class="img-fluid"></a>
-                    </figure>
-                    <div class="block-4-text p-4">
-                      <h3><a href="shop-single.html">Corater</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                  <div class="block-4 text-center border">
-                    <figure class="block-4-image">
-                      <a href="shop-single.html"><img src="../assets/images/cloth_1.jpg" alt="Image placeholder" class="img-fluid"></a>
-                    </figure>
-                    <div class="block-4-text p-4">
-                      <h3><a href="shop-single.html">Tank Top</a></h3>
-                      <p class="mb-0">Finding perfect t-shirt</p>
-                      <p class="text-primary font-weight-bold">$50</p>
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                  <div class="block-4 text-center border">
-                    <figure class="block-4-image">
-                      <a href="shop-single.html"><img src="../assets/images/cloth_2.jpg" alt="Image placeholder" class="img-fluid"></a>
-                    </figure>
-                    <div class="block-4-text p-4">
-                      <h3><a href="shop-single.html">Polo Shirt</a></h3>
-                      <p class="mb-0">Finding perfect products</p>
-                      <p class="text-primary font-weight-bold">$50</p>
-                    </div>
+                  </a>
                   </div>
                 </div>
               </div>
@@ -210,7 +77,6 @@
             </div>
   
             <app-category-list></app-category-list>
-            <!-- <app-products-by-category></app-products-by-category> -->
             
           </div>
         </div>

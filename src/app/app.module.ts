@@ -35,6 +35,7 @@ import { ProductsByCategoryComponent } from './components/shop/products-by-categ
 import { CategoryListComponent } from './components/shop/category-list/category-list.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ProductsSingleComponent } from './components/products-single/products-single.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ProductSaleComponent,
     ProductsMeComponent,
     ProductsByCategoryComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    ProductsSingleComponent
   ],
   imports: [
     BrowserModule,

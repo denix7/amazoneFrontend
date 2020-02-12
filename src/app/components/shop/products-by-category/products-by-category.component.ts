@@ -17,7 +17,7 @@ export class ProductsByCategoryComponent implements OnInit {
   lower;
   upper;
 
-  products = [];
+  products;
   totalProducts = '';
   categoryName = '';
   pages= '';
@@ -47,9 +47,7 @@ export class ProductsByCategoryComponent implements OnInit {
       data['success']
       ? (this.products = data['products'], this.totalProducts = data['totalProducts'], this.categoryName = data['categoryName'].name, this.pages = data['pages'])
       : this.data.error(data['message']);
-      console.warn(this.totalProducts)
-      console.warn(this.categoryName)
-      console.warn(this.pages)
+    
     }
     catch(error)
     {

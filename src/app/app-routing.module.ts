@@ -19,6 +19,7 @@ import { CategoryEditComponent } from './components/category-edit/category-edit.
 import { ProductSaleComponent } from './components/product-sale/product-sale.component';
 import { ProductsMeComponent } from './components/products-me/products-me.component';
 import { ProductsByCategoryComponent } from './components/shop/products-by-category/products-by-category.component';
+import { ProductsSingleComponent } from './components/products-single/products-single.component';
 
 const routes: Routes = [
     {
@@ -36,12 +37,14 @@ const routes: Routes = [
     {
         path: 'shop',
         component: ShopComponent,
-        children: [
-        ]
     },
     {
         path: 'shop/category/:id',
-        component: ProductsByCategoryComponent
+        component: ProductsByCategoryComponent,
+    },
+    {
+        path: 'shop/single/:productId',
+        component: ProductsSingleComponent
     },
     {
         path: 'contact',
@@ -70,14 +73,8 @@ const routes: Routes = [
                 path:"",
                 component: CategoryComponent
             },
-            // {
-            //     path: ':categoryId',
-            //     component: CategoryEditComponent,
-                
-            // },
         ]
     },
-    
     {
         path: 'categories/:categoryId',
         component: CategoryEditComponent,
