@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(private router:Router, private data: DataService) {
     this.data.getProfile();
+    this.data.cartItems = this.data.getCart().length;
   }
   
   ngOnInit() {}
@@ -41,6 +42,7 @@ export class NavbarComponent implements OnInit {
   logout()
   {
     this.data.user = null;
+    this.data.cartItems = 0;
     localStorage.clear();
     this.router.navigate(['']);
   }

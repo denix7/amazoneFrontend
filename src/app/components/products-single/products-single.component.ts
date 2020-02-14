@@ -78,4 +78,11 @@ export class ProductsSingleComponent implements OnInit {
     this.myReview.description = '';
     this.myReview.rating = 0;
   }
+
+  addToCart()
+  {
+    this.data.addToCart(this.product)
+    ? this.data.success('El producto fue agregado al carrito')
+    : this.data.error('El producto ya existe en tu carrito')
+  }
 }

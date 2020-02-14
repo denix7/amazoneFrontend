@@ -25,7 +25,8 @@
                   <li>
                     <a href="cart.html" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
-                      <span class="count">2</span>
+                      
+                      <span *ngIf="data.cartItems" class="count">{{data.cartItems}}</span>
                     </a>
                   </li>
                   
